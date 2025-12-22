@@ -1,7 +1,7 @@
 {
   "name": "librinth",
-  "version": "0.1.0",
-  "description": "Simple TypeScript API wrapper for Modrinth with mock data support",
+  "version": "1.0.0",
+  "description": "Librinth - a TypeScript API client for the Modrinth v2 API (TokenAuth, staging and production support, custom HTTP layer).",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -17,19 +17,27 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "pnpm run build"
+    "build": "tsc -p tsconfig.json",
+    "clean": "rimraf dist .tsbuildinfo",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "format": "prettier --write '**/*.{ts,tsx,js,md,json}'",
+    "test": "echo \"No tests defined yet\" && exit 0",
+    "prepare": "pnpm run build",
+    "prepublishOnly": "pnpm run build",
+    "release": "semantic-release"
   },
   "keywords": [
     "modrinth",
     "api",
-    "wrapper",
+    "client",
+    "librinth",
+    "typescript",
     "minecraft",
-    "mods",
     "typescript"
   ],
   "author": "Keira Hopkins and contributors",
-  "license": "MIT",
+  "license": "Multiple",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NotKeira/librinth.git"
@@ -39,10 +47,18 @@
   },
   "homepage": "https://github.com/NotKeira/librinth#readme",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "devDependencies": {
     "@types/node": "^25.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.50.1",
+    "@typescript-eslint/parser": "^8.50.1",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-node": "^11.1.0",
+    "prettier": "^3.7.4",
+    "rimraf": "^6.1.2",
+    "semantic-release": "^25.0.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
