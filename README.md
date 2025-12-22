@@ -1,163 +1,56 @@
 # librinth
 
-A simple, modern TypeScript API wrapper for Modrinth with built-in mock data support.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![npm version](https://img.shields.io/npm/v/librinth.svg)](https://www.npmjs.com/package/librinth) [![Build Status](https://img.shields.io/github/actions/workflow/status/NotKeira/librinth/ci.yml?branch=main)](https://github.com/NotKeira/librinth/actions) [![GitHub stars](https://img.shields.io/github/stars/NotKeira/librinth?style=social)](https://github.com/NotKeira/librinth)
 
-[![npm version](https://img.shields.io/npm/v/librinth.svg)](https://www.npmjs.com/package/librinth)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+A TypeScript API client for the Modrinth v2 API (TokenAuth, staging and production support, custom HTTP layer).
 
-## Features
+## Requirements
+- Node.js 20 or newer (Node 20+). Older Node versions are not supported.
+- pnpm is the preferred package manager (works with npm/yarn in most cases).
 
-- 🚀 Simple and intuitive API
-- 📦 Built-in TypeScript support
-- 🎭 Mock data for testing and development
-- 🔧 Compatible with Node.js 16+
-- 📝 Comprehensive type definitions
-- 🎯 Zero dependencies (runtime)
-
-## Installation
-
-Using pnpm (recommended):
-
+## Install
+### Preferred (pnpm):
 ```bash
 pnpm add librinth
 ```
 
-Using npm:
-
+### Alternative:
 ```bash
 npm install librinth
-```
-
-Using yarn:
-
-```bash
+# or
 yarn add librinth
 ```
 
-## Quick Start
-
-```typescript
-import { LibrinthClient } from 'librinth';
-
-// Create a client with mock data (default)
-const client = new LibrinthClient();
-
-// Search for projects
-const results = await client.searchProjects('sodium');
-console.log(results.hits);
-
-// Get a specific project
-const project = await client.getProject('sodium');
-console.log(project?.title);
-
-// Get project versions
-const versions = await client.getProjectVersions('AANobbMI');
-console.log(versions);
+## Quick usage
+### CommonJS:
+```js
+const Librinth = require('librinth');
+const client = new Librinth({ token: process.env.MODRINTH_TOKEN });
+await client.getProject('sodium');
 ```
 
-## Usage
-
-### Client Options
-
-```typescript
-const client = new LibrinthClient({
-  useMockData: true, // Use mock data (default: true)
-  baseUrl: 'https://api.modrinth.com/v2', // API base URL
-  userAgent: 'my-app/1.0.0', // Custom user agent
-});
-```
-
-### Available Methods
-
-#### `getProject(idOrSlug: string): Promise<Project | null>`
-
-Get a project by its ID or slug.
-
-```typescript
+### ESM / TypeScript:
+```ts
+import Librinth from 'librinth';
+const client = new Librinth({ token: process.env.MODRINTH_TOKEN });
 const project = await client.getProject('sodium');
 ```
 
-#### `searchProjects(query: string, limit?: number): Promise<SearchResult>`
+## Notes
+- pnpm is recommended for development and CI, but npm and yarn are supported for consumers.
+- The library ships with TypeScript types.
+- Default behavior and API surface are intentionally small and stable.
 
-Search for projects matching a query.
-
-```typescript
-const results = await client.searchProjects('optimization', 20);
-```
-
-#### `getProjectVersions(projectId: string): Promise<Version[]>`
-
-Get all versions for a specific project.
-
-```typescript
-const versions = await client.getProjectVersions('AANobbMI');
-```
-
-#### `getVersion(versionId: string): Promise<Version | null>`
-
-Get a specific version by its ID.
-
-```typescript
-const version = await client.getVersion('version-1');
-```
-
-#### `getUser(idOrUsername: string): Promise<User | null>`
-
-Get a user by their ID or username.
-
-```typescript
-const user = await client.getUser('jellysquid3');
-```
-
-## TypeScript Support
-
-This library is written in TypeScript and includes comprehensive type definitions:
-
-```typescript
-import type { Project, Version, User, SearchResult } from 'librinth';
-```
-
-## Mock Data
-
-By default, the client uses mock data for testing and development. To use real API calls (when implemented), set `useMockData: false`:
-
-```typescript
-const client = new LibrinthClient({ useMockData: false });
-```
-
-## Development
-
-### Prerequisites
-
-- Node.js 16 or higher
-- pnpm
-
-### Setup
-
-```bash
-# Install dependencies
-pnpm install
-
-# Build the library
-pnpm run build
-```
-
-## License
-
-MIT License - Copyright (c) 2025 Keira Hopkins and contributors
-
-See [LICENSE](./LICENSE) for details.
-
-## Modrinth
-
-Modrinth integration, logos, and other Modrinth property (including domain) are copyright Rinth, Inc. This library is not officially affiliated with Modrinth.
+## License and copyright (IMPORTANT)
+- Code license: MIT — Copyright (c) 2025 Keira Hopkins and contributors. See LICENSE.
+- Modrinth content and assets: This project uses and references content hosted on or originating from Modrinth. We adhere to Modrinth's terms and copyright policies. All appropriate rights and ownership of Modrinth-hosted assets remain with Modrinth and the original creators; this project does not claim ownership of those assets. If you use or redistribute Modrinth-hosted content, ensure you follow Modrinth's licensing and attribution requirements. See https://modrinth.com and https://docs.modrinth.com for details.
 
 ## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+- Keep changes small and focused.
+- Run linters and tests before opening PRs.
+- Follow repository contribution guidelines.
 
 ## Links
-
-- [Modrinth Website](https://modrinth.com)
-- [Modrinth API Documentation](https://docs.modrinth.com)
-- [GitHub Repository](https://github.com/NotKeira/librinth)
+- Modrinth: https://modrinth.com
+- Modrinth API docs: https://docs.modrinth.com
+- Repo: https://github.com/NotKeira/librinth

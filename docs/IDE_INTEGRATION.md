@@ -2,7 +2,7 @@
 
 This guide explains how to integrate Prettier and ESLint into common editors so contributors have a consistent development experience.
 
-We support Node-based development (Node >= 18). Ensure you have the repository cloned and dependencies installed:
+We support Node-based development (Node >= 20). Ensure you have the repository cloned and dependencies installed:
 
 1. Install dependencies (using pnpm, npm or yarn):
    - pnpm: `pnpm install`
