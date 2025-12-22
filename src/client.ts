@@ -55,8 +55,8 @@ export class LibrinthClient {
       return project ?? null;
     }
 
-    // Real API call would go here using node:http
-    throw new Error('Real API calls not yet implemented');
+    // Real API calls would go here using node:http
+    throw new Error('Real API calls not implemented yet. Please use useMockData: true for development.');
   }
 
   /**
@@ -78,8 +78,8 @@ export class LibrinthClient {
       };
     }
 
-    // Real API call would go here using node:http
-    throw new Error('Real API calls not yet implemented');
+    // Real API calls would go here using node:http
+    throw new Error('Real API calls not implemented yet. Please use useMockData: true for development.');
   }
 
   /**
@@ -90,8 +90,8 @@ export class LibrinthClient {
       return mockVersions.filter(v => v.project_id === projectId);
     }
 
-    // Real API call would go here using node:http
-    throw new Error('Real API calls not yet implemented');
+    // Real API calls would go here using node:http
+    throw new Error('Real API calls not implemented yet. Please use useMockData: true for development.');
   }
 
   /**
@@ -103,8 +103,8 @@ export class LibrinthClient {
       return version ?? null;
     }
 
-    // Real API call would go here using node:http
-    throw new Error('Real API calls not yet implemented');
+    // Real API calls would go here using node:http
+    throw new Error('Real API calls not implemented yet. Please use useMockData: true for development.');
   }
 
   /**
@@ -118,7 +118,7 @@ export class LibrinthClient {
       return user ?? null;
     }
 
-    // Real API call would go here using node:http
-    throw new Error('Real API calls not yet implemented');
+    // Real API calls would go here using node:http
+    throw new Error('Real API calls not implemented yet. Please use useMockData: true for development.');
   }
 }
