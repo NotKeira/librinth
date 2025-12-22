@@ -1,6 +1,6 @@
 {
   "name": "librinth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Librinth - a TypeScript API client for the Modrinth v2 API (TokenAuth, staging and production support, custom HTTP layer).",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

@@ -16,6 +16,7 @@ We support Node-based development (Node >= 20). Ensure you have the repository c
 Editor-specific instructions
 
 WebStorm (JetBrains)
+
 - WebStorm has built-in ESLint and Prettier support.
 - Settings > Languages & Frameworks > JavaScript > Prettier:
   - Check 'Enable' and point Prettier package to the workspace node_modules (e.g. `<repo>/node_modules/prettier`).
@@ -24,21 +25,20 @@ WebStorm (JetBrains)
 - Enable 'Reformat on save' and 'Run ESLint --fix on save' if you prefer automatic fixes.
 
 Zed
+
 - Zed is an editor in active development. If it supports extensions for ESLint and Prettier:
   - Ensure the workspace has node_modules available.
   - Configure the editor to use the project's Prettier and ESLint binaries (node_modules/.bin).
 
 Visual Studio Code (VS Code)
+
 - Install the following extensions:
   - ESLint (dbaeumer.vscode-eslint)
   - Prettier — Code formatter (esbenp.prettier-vscode)
 - Workspace recommendations (create `.vscode/extensions.json` to recommend these extensions):
   ```json
   {
-    "recommendations": [
-      "dbaeumer.vscode-eslint",
-      "esbenp.prettier-vscode"
-    ]
+    "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
   }
   ```
 - Settings (workspace or user) recommended:
@@ -52,9 +52,10 @@ Visual Studio Code (VS Code)
   }
   ```
 - Ensure Prettier uses the project config:
-    - In settings: "prettier.configPath": ".prettierrc"
+  - In settings: "prettier.configPath": ".prettierrc"
 
 Notes
+
 - We recommend that contributors run `pnpm run format` and `pnpm run lint` before pushing changes.
 - The repository includes GitHub Actions to run checks on PRs; CI will prevent incorrect formatting or linting rules being merged.
 

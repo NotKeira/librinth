@@ -9,6 +9,7 @@ and [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 ## [Unreleased]
 
 ### Changed
+
 - Repository configuration and development tooling:
   - Added strict TypeScript configuration and declaration emission.
   - Added ESLint and Prettier configurations.
@@ -18,6 +19,7 @@ and [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 ## [1.0.0] - 2025-12-22
 
 ### Added
+
 - Initial public release of librinth (v1.0.0).
 - Project scaffolding and build system (TypeScript).
 - Basic package metadata, README and licence placeholders.

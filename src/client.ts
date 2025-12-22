@@ -1,9 +1,9 @@
 /**
  * librinth - Simple TypeScript API wrapper for Modrinth
- * 
+ *
  * Copyright (c) 2025 Keira Hopkins and contributors
  * Licensed under MIT License
- * 
+ *
  * Modrinth integration, logos, and other Modrinth property (including domain)
  * are copyright Rinth, Inc.
  */
@@ -17,13 +17,13 @@ export interface ClientOptions {
    * @default true
    */
   useMockData?: boolean;
-  
+
   /**
    * Base URL for the Modrinth API
    * @default 'https://api.modrinth.com/v2'
    */
   baseUrl?: string;
-  
+
   /**
    * User agent for API requests
    */
@@ -49,14 +49,14 @@ export class LibrinthClient {
    */
   async getProject(idOrSlug: string): Promise<Project | null> {
     if (this.useMockData) {
-      const project = mockProjects.find(
-        p => p.id === idOrSlug || p.slug === idOrSlug
-      );
+      const project = mockProjects.find((p) => p.id === idOrSlug || p.slug === idOrSlug);
       return project ?? null;
     }
 
     // Real API calls would go here using node:http
-    throw new Error('Real API calls not implemented yet. Please use useMockData: true for development.');
+    throw new Error(
+      'Real API calls not implemented yet. Please use useMockData: true for development.',
+    );
   }
 
   /**
@@ -65,9 +65,9 @@ export class LibrinthClient {
   async searchProjects(query: string, limit = 10): Promise<SearchResult> {
     if (this.useMockData) {
       const filtered = mockProjects.filter(
-        p =>
+        (p) =>
           p.title.toLowerCase().includes(query.toLowerCase()) ||
-          p.description.toLowerCase().includes(query.toLowerCase())
+          p.description.toLowerCase().includes(query.toLowerCase()),
       );
 
       return {
@@ -79,7 +79,9 @@ export class LibrinthClient {
     }
 
     // Real API calls would go here using node:http
-    throw new Error('Real API calls not implemented yet. Please use useMockData: true for development.');
+    throw new Error(
+      'Real API calls not implemented yet. Please use useMockData: true for development.',
+    );
   }
 
   /**
@@ -87,11 +89,13 @@ export class LibrinthClient {
    */
   async getProjectVersions(projectId: string): Promise<Version[]> {
     if (this.useMockData) {
-      return mockVersions.filter(v => v.project_id === projectId);
+      return mockVersions.filter((v) => v.project_id === projectId);
     }
 
     // Real API calls would go here using node:http
-    throw new Error('Real API calls not implemented yet. Please use useMockData: true for development.');
+    throw new Error(
+      'Real API calls not implemented yet. Please use useMockData: true for development.',
+    );
   }
 
   /**
@@ -99,12 +103,14 @@ export class LibrinthClient {
    */
   async getVersion(versionId: string): Promise<Version | null> {
     if (this.useMockData) {
-      const version = mockVersions.find(v => v.id === versionId);
+      const version = mockVersions.find((v) => v.id === versionId);
       return version ?? null;
     }
 
     // Real API calls would go here using node:http
-    throw new Error('Real API calls not implemented yet. Please use useMockData: true for development.');
+    throw new Error(
+      'Real API calls not implemented yet. Please use useMockData: true for development.',
+    );
   }
 
   /**
@@ -112,13 +118,13 @@ export class LibrinthClient {
    */
   async getUser(idOrUsername: string): Promise<User | null> {
     if (this.useMockData) {
-      const user = mockUsers.find(
-        u => u.id === idOrUsername || u.username === idOrUsername
-      );
+      const user = mockUsers.find((u) => u.id === idOrUsername || u.username === idOrUsername);
       return user ?? null;
     }
 
     // Real API calls would go here using node:http
-    throw new Error('Real API calls not implemented yet. Please use useMockData: true for development.');
+    throw new Error(
+      'Real API calls not implemented yet. Please use useMockData: true for development.',
+    );
   }
 }
