@@ -6,7 +6,7 @@ A TypeScript API client for the Modrinth v2 API (TokenAuth, staging and producti
 
 ## Requirements
 
-- Node.js 20 or newer (Node 20+). Older Node versions are not supported.
+- Node.js 22 or newer (Node 22+). Older Node versions are not supported.
 - pnpm is the preferred package manager (works with npm/yarn in most cases).
 
 ## Install
