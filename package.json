@@ -1,0 +1,49 @@
+{
+  "name": "librinth",
+  "version": "0.1.0",
+  "description": "Simple TypeScript API wrapper for Modrinth with mock data support",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "modrinth",
+    "api",
+    "wrapper",
+    "minecraft",
+    "mods",
+    "typescript"
+  ],
+  "author": "Keira Hopkins and contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotKeira/librinth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NotKeira/librinth/issues"
+  },
+  "homepage": "https://github.com/NotKeira/librinth#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
