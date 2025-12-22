@@ -1,4 +1,4 @@
-import { LibrinthClient } from '../src/index';
+import { LibrinthClient } from 'librinth';
 
 async function main() {
   console.log('librinth - Example Usage\n');

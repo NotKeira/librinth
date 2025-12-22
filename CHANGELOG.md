@@ -8,17 +8,20 @@ and [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 ## [Unreleased]
 
-## [0.1.0] - 2025-12-22
+### Changed
+- Repository configuration and development tooling:
+  - Added strict TypeScript configuration and declaration emission.
+  - Added ESLint and Prettier configurations.
+  - Added semantic-release workflow for automated releases and git tagging.
+  - Updated package metadata and npm publish controls.
+
+## [1.0.0] - 2025-12-22
 
 ### Added
-- Initial release of librinth
-- LibrinthClient class for interacting with Modrinth API
-- Mock data support for testing and development
-- Type definitions for Project, Version, User, and SearchResult
-- Methods: getProject, searchProjects, getProjectVersions, getVersion, getUser
-- TypeScript support with comprehensive type definitions
-- MIT License with proper copyright attribution
-- Support for Node.js 16+
+- Initial public release of librinth (v1.0.0).
+- Project scaffolding and build system (TypeScript).
+- Basic package metadata, README and licence placeholders.
+- Development tooling: ESLint, Prettier and semantic-release automation.
 
-[Unreleased]: https://github.com/NotKeira/librinth/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/NotKeira/librinth/releases/tag/v0.1.0
+[Unreleased]: https://github.com/NotKeira/librinth/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/NotKeira/librinth/releases/tag/v1.0.0

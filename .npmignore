@@ -1,17 +1,12 @@
-# Source files
+# Do not publish local dev and config files
 src/
-tsconfig.json
-
-# Development
+tests/
+.vscode/
+.idea/
 .github/
-*.test.ts
-*.spec.ts
-
-# Documentation
-*.md
-!README.md
-
-# Config
-.gitignore
-.eslintrc*
-.prettierrc*
+*.log
+.env
+.DS_Store
+/.github
+/node_modules
+/*.tgz
