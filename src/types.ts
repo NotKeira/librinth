@@ -7,7 +7,6 @@
  * Modrinth integration, logos, and other Modrinth property (including domain)
  * are copyright Rinth, Inc.
  */
-
 export interface Project {
   id: string;
   slug: string;

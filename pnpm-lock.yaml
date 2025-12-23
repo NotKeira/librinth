@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      eslint-plugin-import:
-        specifier: ^2.32.0
-        version: 2.32.0(@typescript-eslint/parser@8.50.1(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)
     devDependencies:
       '@semantic-release/changelog':
         specifier: ^6.0.3
@@ -33,6 +29,9 @@ importers:
       eslint-config-prettier:
         specifier: ^10.1.8
         version: 10.1.8(eslint@9.39.2)
+      eslint-plugin-import:
+        specifier: ^2.32.0
+        version: 2.32.0(@typescript-eslint/parser@8.50.1(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)
       eslint-plugin-node:
         specifier: ^11.1.0
         version: 11.1.0(eslint@9.39.2)
